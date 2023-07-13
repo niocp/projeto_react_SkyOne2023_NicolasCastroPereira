@@ -4,18 +4,30 @@ import './index.css';
 
 class Square extends React.Component {
 
+  constructor(props) {
+
+    super(props);
+    this.state = {
+
+      value: null,
+
+    };
+  }
+
   render() {
 
     return (
 
-      <button className="square" onClick={() => alert('Um clique feito comuma Arrow Function, que sensa!')}>
+      <button className="square"
+        onClick={() => this.setState({ value: 'X' })}>
 
-        {this.props.value}
+        {this.state.value}
 
       </button>
 
     );
   }
+
 }
 
 class Board extends React.Component {
